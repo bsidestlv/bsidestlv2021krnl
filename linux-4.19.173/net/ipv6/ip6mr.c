@@ -1630,11 +1630,11 @@ int ip6_mroute_setsockopt(struct sock *sk, int optname, char __user *optval, uns
 	if (!mrt)
 		return -ENOENT;
 
-	if (optname != MRT6_INIT) {
+	/*if (optname != MRT6_INIT) {
 		if (sk != rcu_access_pointer(mrt->mroute_sk) &&
 		    !ns_capable(net->user_ns, CAP_NET_ADMIN))
 			return -EACCES;
-	}
+	}*/
 
 	switch (optname) {
 	case MRT6_INIT:
