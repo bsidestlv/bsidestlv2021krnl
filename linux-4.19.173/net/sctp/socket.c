@@ -7996,6 +7996,7 @@ static struct sctp_bind_bucket *sctp_bucket_create(
 /* Caller must hold hashbucket lock for this tb with local BH disabled */
 static void sctp_bucket_destroy(struct sctp_bind_bucket *pp)
 {
+	printk("bae, about to free 0x%08x\n", pp);
 	if (pp && hlist_empty(&pp->owner)) {
 		__hlist_del(&pp->node);
 		kmem_cache_free(sctp_bucket_cachep, pp);
